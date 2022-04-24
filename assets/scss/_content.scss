@@ -132,30 +132,34 @@
       a.project {
         font-size: 1.8rem;
         display: flex;
-        border-radius: 6px;
         padding: 4px 0;
-        transition: background-color 0.11s;
-
+        border: 1px solid transparent;
+        border-radius: 6px;
+        transition: background-color 0.11s, border-color 0.11s;
+        color: $fg-color;
+        
         @media only screen and (max-width: 768px) {
           margin: 1.6rem 0 1.6rem 0;
-
           display: block;
         }
-
+        
         &:hover,
-        &:focus {
+        &:focus {  
           text-decoration: none;
-          background-color: #4d4d4d;
+          background-color: rgba(0, 0, 0, 0.03);
+          border-color: rgba(0, 0, 0, 0.1);
         }
 
 
         &.featured {
-          background-color: #3a3a3a;
-          border: 1px solid #ffff0030;
+          margin: 0.75rem 0;
+          background-color: #fbf3d5;
+          border-color: #00000014;
 
           &:hover,
           &:focus {
-            background-color: #5a5344;
+            background-color: #fff2c1;
+            border-color: #00000030;
           }
         }
       }
@@ -187,7 +191,6 @@
 
       .title {
         font-size: 1.8rem;
-        color: $fg-color;
         font-family: $font-family;
         font-weight: 700;
       }
@@ -240,10 +243,21 @@
     h2 {
       margin-top: 1rem;
       margin-bottom: 0.5rem;
-      font-size: 2.4rem;
+      font-size: 2rem;
 
       @media only screen and (max-width: 768px) {
-        font-size: 2rem;
+        font-size: 1.8rem;
+      }
+    }
+
+    h3 {
+      color: #646464;
+      margin: 0;
+      font-weight: normal;
+      font-size: 2rem;
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1.8rem;
       }
     }
 
@@ -270,6 +284,28 @@
 
           @media only screen and (max-width: 768px) {
             font-size: 1.4rem;
+          }
+
+          &.labeled-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            text-decoration: none;
+
+            span {
+              position: relative;
+              top: -15%;
+              opacity: 0%;
+              transition: opacity 0.25s, top 0.25s;
+            }
+
+            &:hover,
+            &:focus {
+              span {
+                opacity: 100%;
+                top: 0%;
+              }
+            }
           }
         }
       }

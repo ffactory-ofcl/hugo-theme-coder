@@ -19,12 +19,23 @@
     .list {
       ul {
         li {
-          .title {
+          a.project {
             color: $fg-color-dark;
 
             &:hover,
             &:focus {
-              color: $link-color-dark;
+              background-color: #4d4d4d;
+              color: $fg-color-dark;
+            }
+
+            &.featured {
+              background-color: #3a3a3a;
+              border: 1px solid #ffff0030;
+
+              &:hover,
+              &:focus {
+                background-color: #5a5344;
+              }
             }
           }
         }
@@ -33,30 +44,12 @@
 
     .centered {
       .about {
+        h3 {
+          color: #969696;
+        }
+
         ul {
           li {
-            a.labeled-icon {
-              display: flex;
-              flex-direction: column;
-              gap: 6px;
-              text-decoration: none;
-
-              span {
-                position: relative;
-                top: -15%;
-                opacity: 0%;
-                transition: opacity 0.25s, top 0.25s;
-              }
-
-              &:hover,
-              &:focus {
-                span {
-                  opacity: 100%;
-                  top: 0%;
-                }
-              }
-            }
-
             a {
               color: $fg-color-dark;
 
