@@ -59,6 +59,10 @@
         span {
           line-height: 5rem;
         }
+
+        &.active {
+          text-decoration: underline;
+        }
       }
 
       a,

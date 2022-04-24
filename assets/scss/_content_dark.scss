@@ -8,12 +8,14 @@
           a {
             color: $fg-color-dark;
           }
+
           a:active {
             color: $fg-color-dark;
           }
         }
       }
     }
+
     .list {
       ul {
         li {
@@ -33,6 +35,28 @@
       .about {
         ul {
           li {
+            a.labeled-icon {
+              display: flex;
+              flex-direction: column;
+              gap: 6px;
+              text-decoration: none;
+
+              span {
+                position: relative;
+                top: -15%;
+                opacity: 0%;
+                transition: opacity 0.25s, top 0.25s;
+              }
+
+              &:hover,
+              &:focus {
+                span {
+                  opacity: 100%;
+                  top: 0%;
+                }
+              }
+            }
+
             a {
               color: $fg-color-dark;
 
