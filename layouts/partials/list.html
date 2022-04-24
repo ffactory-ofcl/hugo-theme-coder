@@ -13,18 +13,28 @@
     {{ $list := (.Paginator.Pages) }}
     {{ $len := (len $list) }}
     {{ range $i, $element := $list }}
-    <li class="project">
-      <div class="left">
-        <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-      </div>
-      <div class="right">
-        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
-      </div>
+    {{ $featuredClass := "" }}
+    {{ if $element.Params.featured }}
+    {{ $featuredClass = " featured" }}
+    {{ end }}
+    <li>
+      <a class="project {{ $featuredClass }}" href="{{ .Params.externalLink | default .RelPermalink }}">
+        <div class="left">
+          <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+            {{ if $element.Params.ongoing }}
+            (ongoing)
+            {{ end }}
+          </span>
+        </div>
+        <div class="right">
+          <span class="title">{{ .Title }}</span>
+        </div>
+      </a>
     </li>
     {{ if ne (add $i 1) $len }}
-    <li class="project">
+    <li class="separator">
       <div class="left">
-        <span class="separator">|</span>
+        <span>|</span>
       </div>
       <div class="right"></div>
     </li>

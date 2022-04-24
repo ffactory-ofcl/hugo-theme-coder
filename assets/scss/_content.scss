@@ -118,6 +118,7 @@
 
   @media only screen and (max-width: 768px) {
     width: 10rem;
+    height: 10rem;
   }
 }
 
@@ -127,28 +128,61 @@
     list-style: none;
     padding: 0;
 
-    li.project {
-      font-size: 1.8rem;
-
-      @media only screen and (max-width: 768px) {
-        margin: 1.6rem 0 1.6rem 0;
-      }
-
-      .left {
-        display: inline-block;
-        flex: 1;
-        width: 20rem;
-        text-align: right;
-        margin-right: 3rem;
+    li {
+      a.project {
+        font-size: 1.8rem;
+        display: flex;
+        border-radius: 6px;
+        padding: 4px 0;
+        transition: background-color 0.11s;
 
         @media only screen and (max-width: 768px) {
+          margin: 1.6rem 0 1.6rem 0;
+
           display: block;
-          text-align: left;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          background-color: #4d4d4d;
+        }
+
+
+        &.featured {
+          background-color: #3a3a3a;
+          border: 1px solid #ffff0030;
+
+          &:hover,
+          &:focus {
+            background-color: #5a5344;
+          }
         }
       }
+    }
 
-      .right {
-        flex: 2;
+    .left {
+      display: inline-block;
+      flex: 1;
+      width: 20rem;
+      text-align: right;
+      margin-right: 3rem;
+      min-width: max-content;
+      margin-left: 1rem;
+
+      @media only screen and (max-width: 768px) {
+        text-align: left;
+        margin-bottom: 0.5rem;
+      }
+
+    }
+
+    .right {
+      flex: 2;
+      min-width: max-content;
+
+      @media only screen and (max-width: 768px) {
+        margin-left: 1rem;
       }
 
       .title {
@@ -156,23 +190,31 @@
         color: $fg-color;
         font-family: $font-family;
         font-weight: 700;
-
-        &:hover,
-        &:focus {
-          color: $link-color;
-        }
       }
 
       .spacer {
         flex: 2;
       }
     }
-  }
 
-  ul:not(.pagination) {
-    li {
-      @media only screen and (min-width: 768.1px) {
-        display: flex;
+    li.separator {
+      display: flex;
+
+      @media only screen and (max-width: 768px) {
+        border-bottom: 1px solid dimgray;
+        margin: 0 2rem;
+
+        .left {
+          display: none;
+        }
+      }
+    }
+
+    ul:not(.pagination) {
+      li {
+        @media only screen and (min-width: 768.1px) {
+          display: flex;
+        }
       }
     }
   }
