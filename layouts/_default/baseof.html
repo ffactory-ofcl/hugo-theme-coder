@@ -80,12 +80,27 @@
         <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}" crossorigin="anonymous" media="screen" />
       {{ end }}
     {{ end }}
-
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_32 | default "/images/favicon-32x32.png" | relURL }}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ .Site.Params.favicon_16 | default "/images/favicon-16x16.png" | relURL }}" sizes="16x16">
-
-    <link rel="apple-touch-icon" href="{{ .Site.Params.touchicon | default "/images/apple-touch-icon.png" | relURL }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.touchicon | default "/images/apple-touch-icon.png" | relURL }}">
+    
+    <!-- generics -->
+    <link rel="icon" href="/icons/favicon-32.png" sizes="32x32">
+    <link rel="icon" href="/icons/favicon-57.png" sizes="57x57">
+    <link rel="icon" href="/icons/favicon-76.png" sizes="76x76">
+    <link rel="icon" href="/icons/favicon-96.png" sizes="96x96">
+    <link rel="icon" href="/icons/favicon-128.png" sizes="128x128">
+    <link rel="icon" href="/icons/favicon-192.png" sizes="192x192">
+    <link rel="icon" href="/icons/favicon-228.png" sizes="228x228">
+    
+    <!-- Android -->
+    <link rel="shortcut icon" sizes="196x196" href="/icons/favicon-196.png">
+    
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="/icons/favicon-120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="/icons/favicon-152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="/icons/favicon-180.png" sizes="180x180">
+    
+    <!-- Windows 8 IE 10-->
+    <meta name="msapplication-TileColor" content="#B2B2B2">
+    <meta name="msapplication-TileImage" content="/icons/favicon-144.png">
 
     {{ range .AlternativeOutputFormats -}}
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}

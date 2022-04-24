@@ -42,8 +42,13 @@
   {{ $featuredPage := .GetPage .Site.Params.featuredPage }}
   {{ with $featuredPage }} <!-- TODO actual check -->
   <section class="container page">
-    <h1 class="with-subtitle">{{ .Title }}</h1>
-    <subtitle>Featured project · <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span></subtitle>
+    <article>
+      <h1 class="with-subtitle">{{ .Title }}</h1>
+      <subtitle>Featured project · <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" )
+          }}</span></subtitle>
+
+      {{ partial "posts/article-body.html" $featuredPage }}
+    </article>
   </section>
   {{ end}}
 </div>
