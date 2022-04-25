@@ -44,6 +44,13 @@
       text-justify: auto;
       hyphens: auto;
     }
+
+    p.image-source {
+      color: $fg-color-secondary;
+      margin-top: 0;
+      font-size: 1.5rem;
+      text-align: right;
+    }
   }
 
   .post {
@@ -137,14 +144,14 @@
         border-radius: 6px;
         transition: background-color 0.11s, border-color 0.11s;
         color: $fg-color;
-        
+
         @media only screen and (max-width: 768px) {
           margin: 1.6rem 0 1.6rem 0;
           display: block;
         }
-        
+
         &:hover,
-        &:focus {  
+        &:focus {
           text-decoration: none;
           background-color: rgba(0, 0, 0, 0.03);
           border-color: rgba(0, 0, 0, 0.1);

@@ -1,5 +1,11 @@
 @mixin content_dark {
   .content {
+    article {
+      p.image-source {
+        color: $fg-color-secondary-dark;
+      }
+    }
+
     .post {
       .tags {
         .tag {

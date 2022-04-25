@@ -2,5 +2,8 @@
         {{ if .Params.featuredImage }}
         <img src="{{ .Params.featuredImage | relURL }}" alt="Featured image" />
         {{ end }}
+        {{ if .Params.featuredImageSource }}
+        <p class="image-source">Photo by <a href="{{ index .Params.featuredImageSource 1 }}" target="_blank">{{ index .Params.featuredImageSource 0 }}</a></p>
+        {{ end }}
         {{ .Content }}
 </div>

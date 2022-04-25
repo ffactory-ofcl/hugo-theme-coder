@@ -4,7 +4,9 @@
 {{ define "content" }}
   <section class="container post">
     <article>
-    {{ partial "posts/article.html" . }}
+    {{ partial "project-header.html" . }}
+    {{ partial "posts/article-body.html" . }}
+    {{ partial "posts/article-footer.html" . }}
     </article>
 
     {{ partial "posts/math.html" . }}
