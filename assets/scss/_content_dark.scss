@@ -7,6 +7,12 @@
     }
 
     .post {
+      .post-title {
+        .back-link {
+          color: #858585;
+        }
+      }
+
       .tags {
         .tag {
           background-color: $alt-bg-color-dark;
@@ -23,9 +29,9 @@
     }
 
     .list {
-      ul {
+      ul.projects {
         li {
-          a.project {
+          a {
             color: $fg-color-dark;
 
             &:hover,

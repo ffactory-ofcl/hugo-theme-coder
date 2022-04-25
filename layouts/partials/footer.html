@@ -5,9 +5,7 @@
       {{ .Site.Params.since }} -
       {{ end }}
       {{ now.Year }}
-      {{ if ne (.Page) (.GetPage "/" ) }}
       {{ with .Site.Params.author }} {{ . }} {{ end }}
-      {{ end }}
       {{ if (and .Site.Params.license) }}
       ·
       {{ i18n "licensed_under" }} {{ .Site.Params.license | safeHTML }}

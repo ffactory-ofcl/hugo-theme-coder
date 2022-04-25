@@ -12,8 +12,15 @@
     }
 
     header {
-      margin-top: 6.4rem;
+      margin-top: 3.4rem;
       margin-bottom: 3.2rem;
+
+      &.with-subtitle {
+        h1 {
+          margin-bottom: 0.5rem;
+        }
+        margin-bottom: 1.5rem;
+      }
 
       h1 {
         font-size: 4.2rem;
@@ -56,6 +63,23 @@
   .post {
     .post-title {
       margin-bottom: 0.75em;
+
+      .back-link {
+        color: #646464;
+        display: flex;
+        gap: 16px;
+        margin-bottom: 0.75rem;
+        align-items: center;
+        width: max-content;
+
+        &:hover {
+          text-decoration: none;
+
+          span {
+            text-decoration: underline;
+          }
+        }
+      }
     }
 
     .post-meta {
@@ -135,40 +159,48 @@
     list-style: none;
     padding: 0;
 
-    li {
-      a.project {
-        font-size: 1.8rem;
-        display: flex;
-        padding: 4px 0;
-        border: 1px solid transparent;
-        border-radius: 6px;
-        transition: background-color 0.11s, border-color 0.11s;
-        color: $fg-color;
+    &.projects {
+      li {
+        a {
+          font-size: 1.8rem;
+          display: flex;
+          padding: 4px 0;
+          border: 1px solid transparent;
+          border-radius: 6px;
+          transition: background-color 0.11s, border-color 0.11s;
+          color: $fg-color;
 
-        @media only screen and (max-width: 768px) {
-          margin: 1.6rem 0 1.6rem 0;
-          display: block;
-        }
-
-        &:hover,
-        &:focus {
-          text-decoration: none;
-          background-color: rgba(0, 0, 0, 0.03);
-          border-color: rgba(0, 0, 0, 0.1);
-        }
-
-
-        &.featured {
-          margin: 0.75rem 0;
-          background-color: #fbf3d5;
-          border-color: #00000014;
+          @media only screen and (max-width: 768px) {
+            margin: 1.6rem 0 1.6rem 0;
+            display: block;
+          }
 
           &:hover,
           &:focus {
-            background-color: #fff2c1;
-            border-color: #00000030;
+            text-decoration: none;
+            background-color: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.1);
+          }
+
+
+          &.featured {
+            margin: 0.75rem 0;
+            background-color: #fbf3d5;
+            border-color: #00000014;
+
+            &:hover,
+            &:focus {
+              background-color: #fff2c1;
+              border-color: #00000030;
+            }
           }
         }
+      }
+    }
+
+    &.posts {
+      li {
+        margin-bottom: 0.75rem;
       }
     }
 

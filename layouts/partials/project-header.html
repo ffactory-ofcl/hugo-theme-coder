@@ -1,5 +1,6 @@
 <header>
     <div class="post-title">
+        {{ partial "posts/article-back.html" . }}
         <h1 class="title">
             <a class="title-link" href="{{ .Permalink | safeURL }}">
                 {{ .Title }}
