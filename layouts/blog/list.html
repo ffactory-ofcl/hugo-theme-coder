@@ -1,5 +1,9 @@
 {{ define "title" }}
-  {{ .Title }}  · {{ .Site.Title }}
+  {{ if .Params.siteTitleFirst }}  
+      {{ .Site.Title }} · {{ .Title }}
+    {{ else }}  
+      {{ .Title }}  · {{ .Site.Title }}
+  {{ end }}
 {{ end }}
 {{ define "content" }}
   <section class="container list">

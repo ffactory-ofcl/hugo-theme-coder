@@ -1,5 +1,9 @@
 {{ define "title" }}
+{{ if .Params.siteTitleFirst }}  
+  {{ .Site.Title }} · {{ .Title }}
+{{ else }}
   {{ .Title }} · {{ .Site.Title }}
+{{ end}}
 {{ end }}
 {{ define "content" }}
   {{ partial "page.html" . }}
