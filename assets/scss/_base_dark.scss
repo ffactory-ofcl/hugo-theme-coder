@@ -14,16 +14,8 @@
   h6 {
     color: $alt-fg-color-dark;
 
-    &:hover .heading-link {
-      visibility: visible;
-    }
-
     .heading-link {
       color: $link-color-dark;
-      font-weight: inherit;
-      text-decoration: none;
-      font-size: 80%;
-      visibility: hidden;
     }
 
     .title-link {
