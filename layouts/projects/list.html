@@ -1,3 +1,11 @@
+{{ define "title" }}
+  {{ if .Params.siteTitleFirst }}
+      {{ .Site.Title }} · {{ .Title }}
+    {{ else }}
+      {{ .Title }}  · {{ .Site.Title }}
+  {{ end }}
+{{ end }}
+{{ define "content" }}
 <section class="container list">
   <h1 class="title">
     <a class="title-link" href="{{ .Permalink | safeURL }}">
@@ -9,12 +17,16 @@
     </a>
   </h1>
   {{ .Content }}
-  <ul>
+  <ul class="projects">
     {{ $list := (.Paginator.Pages) }}
     {{ $len := (len $list) }}
     {{ range $i, $element := $list }}
+    {{ $featuredClass := "" }}
+    {{ if $element.Params.featured }}
+    {{ $featuredClass = " featured" }}
+    {{ end }}
     <li>
-      <a href="{{ .Params.externalLink | default .RelPermalink }}">
+      <a class="{{ $featuredClass }}" href="{{ .Params.externalLink | default .RelPermalink }}">
         <div class="left">
           <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
             {{ if $element.Params.ongoing }}
@@ -39,3 +51,6 @@
   </ul>
   {{ partial "pagination.html" . }}
 </section>
+{{ end }}
+
+
