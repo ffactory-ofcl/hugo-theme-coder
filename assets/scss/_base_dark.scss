@@ -87,6 +87,12 @@
   table tr th:last-child {
     border-right: 0;
   }
+
+  figure {
+    figcaption {
+      color: $fg-color-secondary-dark;
+    }
+  }
 }
 
 body.colorscheme-dark {

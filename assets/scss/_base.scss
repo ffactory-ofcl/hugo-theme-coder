@@ -213,6 +213,11 @@ img {
 
 figure {
   text-align: center;
+
+  figcaption {
+    font-style: italic;
+    color: $fg-color-secondary;
+  }
 }
 
 .preload-transitions * {
