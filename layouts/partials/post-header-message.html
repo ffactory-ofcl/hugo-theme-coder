@@ -1,0 +1,11 @@
+{{- $title := .Site.Params.postHeaderMessageTitle | default "Welcome" -}}
+{{- with (.Site.Params.postHeaderMessage | .Page.RenderString | chomp) -}}
+<div class="notice note">
+  <div class="notice-title">
+    <i class="fa fa-sticky-note" aria-hidden="true"></i>{{ i18n $title | default $title }}
+  </div>
+  <div class="notice-content">
+    {{- . -}}
+  </div>
+</div>
+{{ end }}
