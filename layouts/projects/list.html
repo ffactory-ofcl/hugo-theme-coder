@@ -28,7 +28,7 @@
     <li>
       <a class="{{ $featuredClass }}" href="{{ .Params.externalLink | default .RelPermalink }}">
         <div class="left">
-          <span>{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}
+          <span>{{ .Date | time.Format ("January 2006" ) }}
             {{ if $element.Params.ongoing }}
             (ongoing)
             {{ end }}
