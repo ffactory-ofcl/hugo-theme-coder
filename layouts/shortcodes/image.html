@@ -5,14 +5,14 @@
 {{ $alt := $.Get "alt"}}
 
 <!-- Get image -->
-<figure>    
+<figure>
     {{ with .Page.Resources.GetMatch $src }}
         <picture>
             {{ with .Resize "400x webp" }}
                 <source media="(max-width:400px)" srcset="{{ .RelPermalink }}">
             {{ end }}
             {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-                <img src="{{ .RelPermalink }}" alt="{{ $alt }}" style="width: auto;">
+                <img src="{{ .RelPermalink }}" alt="{{ $alt }}" style="width: auto; max-height: 500px">
             {{ end }}
         </picture>
     {{ end }}
