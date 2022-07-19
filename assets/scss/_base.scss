@@ -216,6 +216,11 @@ table tr th:last-child {
 
 img {
   max-width: 100%;
+
+  &.featured {
+    border-radius: 4px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
+  }
 }
 
 figure {

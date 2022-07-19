@@ -2,7 +2,7 @@
   {{ if .Params.featuredImage }}
     {{ $image := .Page.Resources.GetMatch .Params.featuredImage }}
     {{ with $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
-      <img src="{{ .RelPermalink }}" alt="Featured image" >
+      <img src="{{ .RelPermalink }}" alt="Featured image" class="featured" >
     {{ end }}
 
     {{ if .Params.featuredImageSource }}
