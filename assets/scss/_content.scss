@@ -266,6 +266,20 @@
       }
     }
   }
+
+  table.posts {
+    width: 100%;
+
+    tr {
+      td:first-of-type {
+        text-align: right;
+      }
+    }
+    td {
+      border: none;
+      padding: 1rem 2rem;
+    }
+  }
 }
 
 .centered {

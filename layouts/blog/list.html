@@ -1,7 +1,7 @@
 {{ define "title" }}
-  {{ if .Params.siteTitleFirst }}  
+  {{ if .Params.siteTitleFirst }}
       {{ .Site.Title }} · {{ .Title }}
-    {{ else }}  
+    {{ else }}
       {{ .Title }}  · {{ .Site.Title }}
   {{ end }}
 {{ end }}
@@ -13,11 +13,11 @@
       </a>
     </h1>
     {{ .Content }}
-    <ul class="posts">
+    <table class="posts">
       {{- range .Paginator.Pages -}}
         {{- .Render "li" -}}
       {{- end -}}
-    </ul>
+    </table>
 
     {{ partial "pagination.html" . }}
   </section>
