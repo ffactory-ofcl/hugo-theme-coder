@@ -7,5 +7,10 @@
                 {{ .Title }}
             </a>
         </h1>
+        {{ with $.Params.subtitle }}
+        <h6 class="subtitle">
+            {{ . }}
+        </h6>
+        {{ end }}
     </div>
 </header>
