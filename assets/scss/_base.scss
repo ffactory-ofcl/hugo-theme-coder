@@ -12,7 +12,7 @@ html {
 body {
   color: $fg-color;
   background-color: $bg-color;
-  font-family: $font-family;
+  font-family: $font-body;
   font-size: 1.6em;
   font-weight: 400;
   line-height: 1.8em;
@@ -27,7 +27,7 @@ a {
   font-weight: 500;
   color: $link-color;
   text-decoration: none;
-  transition: all 0.25s ease-in;
+  // transition: all 0.25s ease-in;
 
   &:focus,
   &:hover {
@@ -39,13 +39,25 @@ p {
   margin: 2rem 0 2rem 0;
 }
 
+.header-icon-name {
+  display: inline-block;
+  height: 100%;
+  img {
+    height: 48px;
+  }
+
+  &.dark {
+    display: none;
+  }
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
+  font-family: $font-titles;
   font-weight: 600;
   color: $alt-fg-color;
   margin: 4rem 0 2.5rem 0;
@@ -79,6 +91,11 @@ h6 {
 h1 {
   font-size: 3.2rem;
   line-height: 3.6rem;
+  
+  &.display {
+    font-family: $font-display;
+    letter-spacing: 0.01em;
+  }
 
   @media only screen and (max-width: 768px) {
     font-size: 3rem;
@@ -150,7 +167,7 @@ strong {
 
 pre {
   display: block;
-  font-family: $code-font-family;
+  font-family: $font-code;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2.6rem;
@@ -165,7 +182,7 @@ pre {
 }
 
 code {
-  font-family: $code-font-family;
+  font-family: $font-code;
   font-size: 1.6rem;
   font-weight: 400;
   background-color: $alt-bg-color;
@@ -216,9 +233,6 @@ table tr th:last-child {
 
 img {
   max-width: 100%;
-
-  border-radius: 4px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
 }
 
 figure {
@@ -278,4 +292,14 @@ figure {
 
 .fas {
   font-weight: 900;
+}
+
+@font-face {
+  font-family: MerriweatherRegular;
+  src: url(/fonts/Merriweather-Regular.ttf);
+}
+
+@font-face {
+  font-family: BelyDisplay;
+  src: url(/fonts/BelyDisplay-Regular.woff2);
 }

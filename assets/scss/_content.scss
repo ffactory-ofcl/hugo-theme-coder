@@ -12,7 +12,7 @@
     }
 
     header {
-      margin-top: 3.4rem;
+      // margin-top: 3.4rem;
       margin-bottom: 3.2rem;
 
       &.with-subtitle {
@@ -30,14 +30,55 @@
 
         @media only screen and (max-width: 768px) {
           font-size: 4rem;
-          line-height: 4.4rem;
         }
       }
 
       h6 {
-        margin-top: 6px;
+        margin-top: 12px;
         font-weight: normal;
         color: #5c5c5c;
+      }
+
+      body {
+        padding: 24px;
+      }
+
+      button {
+        margin-bottom: 12px;
+      }
+
+      .overlined {
+        position: relative;
+        margin-top: 5rem;
+
+        &::before {
+          animation-delay: 0.2s;
+          animation-name: widenHeaderUnderline;
+          animation-duration: 0.5s;
+          animation-fill-mode: both;
+          animation-iteration-count: 1;
+          background-color: $fg-color-header-underline-light;
+          top: -0.3em;
+          content: " ";
+          height: 0.55rem;
+          left: 0;
+          position: absolute;
+          right: 0;
+          width: 5rem;
+          border-radius: 1px;
+        }
+      }
+
+      @keyframes widenHeaderUnderline {
+        0% {
+          opacity: 0;
+          width: 0;
+        }
+
+        to {
+          opacity: 1;
+          width: 5rem;
+        }
       }
     }
 
@@ -69,6 +110,12 @@
       margin-top: 0;
       font-size: 1.5rem;
       text-align: right;
+      opacity: 0.8;
+    }
+
+    img {
+      border-radius: 4px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     }
   }
 
@@ -174,14 +221,6 @@
     &.projects {
       li {
         a {
-          font-size: 1.8rem;
-          display: flex;
-          padding: 4px 0;
-          border: 1px solid transparent;
-          border-radius: 6px;
-          transition: background-color 0.11s, border-color 0.11s;
-          color: $fg-color;
-
           @media only screen and (max-width: 768px) {
             margin: 1.6rem 0 1.6rem 0;
             display: block;
@@ -206,6 +245,14 @@
               border-color: #00000030;
             }
           }
+          
+          font-size: 1.8rem;
+          display: flex;
+          padding: 4px 0;
+          border: 1px solid transparent;
+          border-radius: 6px;
+          transition: background-color 0.11s, border-color 0.11s;
+          color: $fg-color;
         }
       }
     }
@@ -234,7 +281,7 @@
 
     .right {
       flex: 2;
-      min-width: max-content;
+      // min-width: max-content;
 
       @media only screen and (max-width: 768px) {
         margin-left: 1rem;
@@ -242,7 +289,7 @@
 
       .title {
         font-size: 1.8rem;
-        font-family: $font-family;
+        // font-family: $font-family;
         font-weight: 700;
       }
 
@@ -281,6 +328,7 @@
         text-align: right;
       }
     }
+
     td {
       border: none;
       padding: 1rem 2rem;
@@ -337,7 +385,7 @@
 
         a {
           color: $fg-color;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           margin-left: 1rem;
           margin-right: 1rem;
           font-size: 1.6rem;
@@ -358,6 +406,7 @@
             text-decoration: none;
 
             span {
+              font-family: $font-code;
               position: relative;
               top: -15%;
               opacity: 0%;

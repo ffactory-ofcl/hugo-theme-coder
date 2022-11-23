@@ -6,7 +6,7 @@
   span {
     display: inline;
     font-size: 1.7rem;
-    font-family: $font-family;
+    // font-family: $font-family;
     font-weight: 600;
     color: $fg-color;
   }
@@ -21,10 +21,11 @@
 
   .navigation-title {
     letter-spacing: 0.1rem;
-    text-transform: uppercase;
+    // text-transform: uppercase;
   }
 
   .navigation-list {
+    // margin-left: auto;
     float: right;
     list-style: none;
     margin-bottom: 0;

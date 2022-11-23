@@ -2,8 +2,10 @@
   <section class="container">
     {{ $homeActiveClass := "" }}
     {{ if ne (.Page) (.GetPage "/" ) }}
-      <a class="navigation-title" href="{{ .Site.BaseURL | relLangURL }}">
-        Home
+      <a class="navigation-title header-icon-name" href="{{ .Site.BaseURL | relLangURL }}">
+        <!-- {{ .Site.Title }} -->
+        <img class="header-icon-name light" src="/images/header-icon-name/header-icon-light.svg"/>
+        <img class="header-icon-name dark" src="/images/header-icon-name/header-icon-dark.svg"/>
       </a>
     {{ end }}
     {{ if or .Site.Menus.main .Site.IsMultiLingual }}

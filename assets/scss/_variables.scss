@@ -1,24 +1,29 @@
 // Fonts
-$font-family: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-Oxygen-Sans,
-Ubuntu,
-Cantarell,
-"Helvetica Neue",
-Helvetica,
-"PingFang SC",
-STXihei,"华文细黑",
-"Microsoft YaHei","微软雅黑",
-SimSun,"宋体",
-Heiti,"黑体",
-sans-serif;
-$code-font-family: SFMono-Regular,
-Consolas,
-Liberation Mono,
-Menlo,
-monospace;
+$font-display: 'BelyDisplay', serif;
+$font-titles: 'MerriweatherRegular', serif;
+$font-body: 'MerriweatherRegular', serif;
+
+$default-font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    Helvetica,
+    "PingFang SC",
+    STXihei, "华文细黑",
+    "Microsoft YaHei", "微软雅黑",
+    SimSun, "宋体",
+    Heiti, "黑体",
+    sans-serif;
+
+$font-code: SFMono-Regular,
+    Consolas,
+    Liberation Mono,
+    Menlo,
+    monospace;
 
 // Colors
 $bg-color: #fafafa !default;
@@ -27,6 +32,7 @@ $fg-color-secondary: #505050 !default;
 $alt-bg-color: #e0e0e0 !default;
 $alt-fg-color: #000 !default;
 $link-color: #1565c0 !default;
+$fg-color-header-underline-light: #eaea2d;
 
 // Dark colors
 $bg-color-dark: #212121 !default;
@@ -35,6 +41,7 @@ $fg-color-secondary-dark: #bbbbbb !default;
 $alt-bg-color-dark: #424242 !default;
 $alt-fg-color-dark: #dadada !default;
 $link-color-dark: #42a5f5 !default;
+$fg-color-header-underline-dark: #ffff69;
 
 // Notice colors
 $fg-color-notice-note-icon: #5e35b1 !default;

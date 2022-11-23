@@ -6,6 +6,10 @@
       }
 
       header {
+        .overlined::before {
+          background-color: $fg-color-header-underline-dark;
+        }
+
         h6 {
           color: #adadad;
         }

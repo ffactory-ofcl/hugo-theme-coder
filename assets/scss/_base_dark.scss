@@ -6,6 +6,13 @@
     color: $link-color-dark;
   }
 
+  .header-icon-name.light {
+    display: none;
+  }
+  .header-icon-name.dark {
+    display: inline-block;
+  }
+
   h1,
   h2,
   h3,
