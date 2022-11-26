@@ -95,6 +95,9 @@ h1 {
   &.display {
     font-family: $font-display;
     letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility;
   }
 
   @media only screen and (max-width: 768px) {
@@ -301,5 +304,9 @@ figure {
 
 @font-face {
   font-family: BelyDisplay;
-  src: url(/fonts/BelyDisplay-Regular.woff2);
+  src: url('/fonts/BelyDisplay-Regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/BelyDisplay-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/fonts/BelyDisplay-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/fonts/BelyDisplay-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('/fonts/BelyDisplay-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
