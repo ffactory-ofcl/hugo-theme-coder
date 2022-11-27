@@ -1,46 +1,44 @@
 {{ define "title" }}
-  {{ if .Params.siteTitleFirst }}
-      {{ .Site.Title }} · {{ .Title }}
-    {{ else }}
-      {{ .Title }}  · {{ .Site.Title }}
-  {{ end }}
+{{ if .Params.siteTitleFirst }}
+{{ .Site.Title }} · {{ .Title }}
+{{ else }}
+{{ .Title }} · {{ .Site.Title }}
+{{ end }}
 {{ end }}
 {{ define "content" }}
 <section class="container list">
-  <h1 class="title">
-    <a class="title-link" href="{{ .Permalink | safeURL }}">
-      {{- if eq .Kind "term" -}}
-      {{- i18n .Data.Plural 1 | title -}}
-      {{- print ": " -}}
-      {{- end -}}
-      {{- i18n (lower .Title) | default .Title | title -}}
-    </a>
-  </h1>
-  {{ .Content }}
-  <ul class="arts">
-    {{ $list := (.Paginator.Pages) }}
-    {{ $len := (len $list) }}
-    {{ range $i, $element := $list }}
-    <li>
-        <a href="{{ .Params.externalLink | default .RelPermalink }}">
-        {{ $image := .Page.Resources.GetMatch .Params.source }}
-        {{ with $image.Resize (printf "%dx%d webp" 480 480) }}
-            <img src="{{ .RelPermalink }}" alt="Arts image" >
+    <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+            {{- if eq .Kind "term" -}}
+            {{- i18n .Data.Plural 1 | title -}}
+            {{- print ": " -}}
+            {{- end -}}
+            {{- i18n (lower .Title) | default .Title | title -}}
+        </a>
+    </h1>
+    {{ .Content }}
+    <ul class="arts">
+        {{ $list := (.Paginator.Pages) }}
+        {{ $len := (len $list) }}
+        {{ range $i, $element := $list }}
+        <li>
+            <a href="{{ .Params.externalLink | default .RelPermalink }}">
+                {{ $image := .Page.Resources.GetMatch .Params.coverImage }}
+                {{ $title := .Params.title }}
+                {{ $date := .Date | time.Format "Jan 06" }}
+                {{ with $image.Resize (printf "%dx%d webp" 480 480) }}
+                <img src="{{ .RelPermalink }}" alt="Arts image" />
+                <div class="overlay">
+                    <span>
+                        {{ $title }} &nbsp;·&nbsp; {{ $date }}
+                    </span>
+                    
+                </div>
+                {{ end }}
+            </a>
+        </li>
         {{ end }}
-      </a>
-    </li>
-    {{ if ne (add $i 1) $len }}
-    <li class="separator">
-      <div class="left">
-        <span>|</span>
-      </div>
-      <div class="right"></div>
-    </li>
-    {{ end }}
-    {{ end }}
-  </ul>
-  {{ partial "pagination.html" . }}
+    </ul>
+    {{ partial "pagination.html" . }}
 </section>
 {{ end }}
-
-

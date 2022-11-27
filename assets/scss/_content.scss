@@ -117,6 +117,17 @@
       border-radius: 4px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.17);
     }
+
+    .arts-post {
+      .cover-image {
+        // TODO fix: 
+        // max-height: 90vh;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .post {
@@ -245,14 +256,81 @@
               border-color: #00000030;
             }
           }
-          
+
           font-size: 1.8rem;
           display: flex;
           padding: 4px 0;
           border: 1px solid transparent;
           border-radius: 6px;
-          transition: background-color 0.11s, border-color 0.11s;
+          transition: background-color 0.11s,
+          border-color 0.11s;
           color: $fg-color;
+        }
+      }
+    }
+
+    &.arts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr [col-start]);
+      column-gap: 24px;
+      row-gap: 24px;
+
+      @media only screen and (max-width: 768px) {
+        grid-template-columns: repeat(2, 3fr [col-start]);
+      }
+
+      a {
+        display: flex;
+        border-radius: 6px;
+        overflow: hidden;
+        transition: border-radius 0.25s;
+        position: relative;
+
+        @media only screen and (max-width: 768px) {
+          border-radius: 10px;
+
+          &:hover {
+            border-radius: 18px;
+          }
+        }
+
+        .overlay {
+          opacity: 0;
+          background-color: rgba(0, 0, 0, 0.3);
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          transition: opacity 0.25s;
+          pointer-events: none;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          span {
+            padding: 8px 12px;
+            background-color: rgba(255, 255, 255, 0.87);
+            color: rgba(0, 0, 0, 0.87);
+            border-radius: 12px;
+          }
+        }
+
+        &:hover {
+          border-radius: 12px;
+
+          .overlay {
+            opacity: 1;
+          }
+        }
+
+        img {
+          object-fit: cover;
+          transition: transform 0.25s;
+          transform: scale(1.1);
+
+          &:hover {
+            transform: scale(1);
+          }
         }
       }
     }
