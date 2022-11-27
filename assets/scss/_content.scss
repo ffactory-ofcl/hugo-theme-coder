@@ -120,11 +120,13 @@
 
     .arts-post {
       .cover-image {
-        // TODO fix: 
-        // max-height: 90vh;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 64px;
 
         img {
-          width: 100%;
+          height: inherit;
         }
       }
     }
