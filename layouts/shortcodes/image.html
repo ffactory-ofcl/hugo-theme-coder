@@ -12,7 +12,7 @@
                 <source media="(max-width:400px)" srcset="{{ .RelPermalink }}">
             {{ end }}
             {{ with .Resize (printf "%dx%d webp" .Width .Height) }}
-                <img src="{{ .RelPermalink }}" alt="{{ $alt }}" style="width: auto; max-height: 450px; max-width: 80%">
+                <img src="{{ .RelPermalink }}" alt="{{ $alt }}"  width="{{ .Width }}" height="{{ .Height }}" style="width: auto; max-height: 450px; max-width: 80%">
             {{ end }}
         </picture>
     {{ end }}

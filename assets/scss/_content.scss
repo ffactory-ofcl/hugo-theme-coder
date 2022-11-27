@@ -120,7 +120,8 @@
 
     .arts-post {
       .cover-image {
-        height: 90vh;
+        // TODO maybe fix
+        // max-height: 90vh;
         display: flex;
         justify-content: center;
         margin-bottom: 64px;

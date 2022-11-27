@@ -94,7 +94,7 @@ h1 {
   
   &.display {
     font-family: $font-display;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.04em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizelegibility;
@@ -300,6 +300,7 @@ figure {
 @font-face {
   font-family: MerriweatherRegular;
   src: url(/fonts/Merriweather-Regular.ttf);
+  font-display: swap;
 }
 
 @font-face {
@@ -309,4 +310,5 @@ figure {
        url('/fonts/BelyDisplay-Regular.woff2') format('woff2'), /* Super Modern Browsers */
        url('/fonts/BelyDisplay-Regular.woff') format('woff'), /* Pretty Modern Browsers */
        url('/fonts/BelyDisplay-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-display: swap;
 }

@@ -1,17 +1,17 @@
 <div class="arts-post">
 
-{{ $image := .Page.Resources.GetMatch .Params.coverImage }}
-{{ with $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
-<div class="cover-image">
-<img src="{{ .RelPermalink }}" alt="Arts image" />
-</div>
-{{ end }}
+    {{ $image := .Page.Resources.GetMatch .Params.coverImage }}
+    {{ with $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
+    <div class="cover-image">
+        <img src="{{ .RelPermalink }}" alt="Arts image" width="{{ .Width }}" height="{{ .Height }}"/>
+    </div>
+    {{ end }}
 
-{{ with .Params.additionalImages }}
+    {{ with .Params.additionalImages }}
     {{ range $i, $image := . }}
-        {{ $image := .Page.Resources.GetMatch .Params.coverImage }}
-        {{ with $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
-        <img src="{{ .RelPermalink }}" alt="Arts image" />
+    {{ $image := .Page.Resources.GetMatch .Params.coverImage }}
+    {{ with $image.Resize (printf "%dx%d webp" $image.Width $image.Height) }}
+    <img src="{{ .RelPermalink }}" alt="Arts image"  width="{{ .Width }}" height="{{ .Height }}" />
         {{ end }}
     {{ end }}
 {{ end }}
