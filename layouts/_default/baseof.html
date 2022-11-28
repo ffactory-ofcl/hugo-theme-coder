@@ -113,6 +113,9 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
     {{ end -}}
 
+    <!-- Self-hosted analytics -->
+    <script defer data-domain="filippo-orru.com" src="https://analytics.filippo-orru.com/js/plausible.js"></script>
+
     {{ hugo.Generator }}
   </head>
 
