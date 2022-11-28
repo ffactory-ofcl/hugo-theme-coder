@@ -39,16 +39,12 @@ p {
   margin: 2rem 0 2rem 0;
 }
 
-.header-icon-name {
-  display: inline-block;
-  height: 100%;
-  img {
-    height: 48px;
-  }
+.navigation-title {
+  height: 48px;
+}
 
-  &.dark {
-    display: none;
-  }
+.header-icon-name.dark {
+  display: none;
 }
 
 h1,
@@ -91,7 +87,7 @@ h6 {
 h1 {
   font-size: 3.2rem;
   line-height: 3.6rem;
-  
+
   &.display {
     font-family: $font-display;
     letter-spacing: 0.04em;
@@ -305,10 +301,15 @@ figure {
 
 @font-face {
   font-family: BelyDisplay;
-  src: url('/fonts/BelyDisplay-Regular.eot'); /* IE9 Compat Modes */
-  src: url('/fonts/BelyDisplay-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('/fonts/BelyDisplay-Regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('/fonts/BelyDisplay-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-       url('/fonts/BelyDisplay-Regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('/fonts/BelyDisplay-Regular.eot');
+  /* IE9 Compat Modes */
+  src: url('/fonts/BelyDisplay-Regular.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/fonts/BelyDisplay-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('/fonts/BelyDisplay-Regular.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/fonts/BelyDisplay-Regular.svg#svgFontName') format('svg');
+  /* Legacy iOS */
   font-display: swap;
 }
