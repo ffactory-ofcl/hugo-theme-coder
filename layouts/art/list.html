@@ -26,7 +26,7 @@
                 {{ $image := .Page.Resources.GetMatch .Params.coverImage }}
                 {{ $title := .Params.title }}
                 {{ $date := .Date | time.Format "Jan 06" }}
-                {{ with $image.Resize (printf "%dx%d webp" 480 480) }}
+                {{ with $image.Fill (printf "%dx%d webp Center" 480 480) }}
                 <img src="{{ .RelPermalink }}" alt="Arts image" />
                 <div class="overlay">
                     <span>
